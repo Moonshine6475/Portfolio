@@ -163,10 +163,11 @@ h1, h2, h3, p, div {
 }
 .gallery-cell {
   width: 70%;
+  max-width: 800px;
   height: 70vh;
   border-radius: 25px;
   background: transparent;
-  position: sticky; 
+  position: relative; 
   justify-content: center; 
     align-items: center;
     display: flex;
