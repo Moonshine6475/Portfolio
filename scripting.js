@@ -1,3 +1,5 @@
+
+document.addEventListener('DOMContentLoaded', () => {
 const follower = document.querySelector('#pointer');
 
     window.addEventListener('mousemove', (e) => {
@@ -6,6 +8,7 @@ const follower = document.querySelector('#pointer');
     pointer.style.top = e.clientY + 'px';
   });
     });
+});
     document.addEventListener("DOMContentLoaded", () => {
     const wrapElement = (el) => {
     const content = el.innerHTML;
