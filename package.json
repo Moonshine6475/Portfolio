@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "imports": {
+    "#scripting.js": "./scripting.js",
+    "#styles.css": "./styles.css"
+  },
   "directories": {
     "doc": "docs"
   },
