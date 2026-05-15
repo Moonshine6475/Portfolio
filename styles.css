@@ -78,6 +78,12 @@ section {
      justify-content: center;
 
  }
+
+ #pointer{
+  position:fixed;
+  transform:translate(-50%, -50%);
+  pointer-events: none;
+ }
  .about-greeting {
     font-size: 36px;
     color: #6FFFE9;
