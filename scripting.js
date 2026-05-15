@@ -1,4 +1,4 @@
-
+import './styles.css';
 document.addEventListener('DOMContentLoaded', () => {
 const follower = document.querySelector('#pointer');
 
