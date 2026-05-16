@@ -1,4 +1,4 @@
-
+ 
 document.addEventListener('DOMContentLoaded', () => {
 const follower = document.querySelector('#pointer');
 
@@ -20,6 +20,7 @@ const follower = document.querySelector('#pointer');
         if (size) s.style.fontSize = size;
         s.innerHTML = char === " " ? "&nbsp;" : char;
         s.style.setProperty('--speed', (Math.random() * 1.5 + 0.5).toFixed(2));
+        s.style.setProperty('--direction', Math.random() < 0.5 ? '1' : '-1');
         return s;
     };
     const createWordContainer = () => {
@@ -67,8 +68,8 @@ const follower = document.querySelector('#pointer');
     });
 };
 
-    const targetPara = document.querySelector('.about-content p');
+    const targetPara = document.querySelector('.greeting-content p');
     if (targetPara) wrapElement(targetPara);
-    const title = document.querySelector('.about-greeting h1');
+    const title = document.querySelector('.greeting h1');
     if(title) wrapElement(title);
 });

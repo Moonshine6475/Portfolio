@@ -2,7 +2,8 @@
   "name": "portfolio",
   "version": "1.0.0",
   "description": "",
-  "main": "scripting.js",
+  "main": "index.js",
+  "import": "scripting.js",
   "directories": {
     "doc": "docs"
   },

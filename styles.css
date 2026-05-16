@@ -68,6 +68,8 @@ section {
 .page1{
      border: none;
      outline:none;
+     position:relative;
+     overflow: hidden;
      margin-bottom: -1px;
      background: linear-gradient(to bottom, #0B132B, #0B132B, #3A506B);
      display: flex;
@@ -85,35 +87,39 @@ section {
   height:auto;
   transform:translate(-50%, -50%);
   pointer-events: none !important;
+  z-index: 1;
  }
- .about-greeting {
+ .greeting {
     font-size: 36px;
     color: #6FFFE9;
     text-align: center;
     background: transparent;
+    position: relative;
     border:none;
     box-shadow: none;
     outline: none;
     text-decoration: none;
+    z-index: 7;
 }
-.about-content {
+.greeting-content {
     font-size: 24px;
     padding:20px;
     color: #b6cac7;
-    text-align: center;
+    text-align: left;
     background: transparent;
     border:none;
     box-shadow: none;
     outline: none;
     text-decoration: none;
+    z-index: 7;
 }
-.about-content p > span, 
+.greeting-content p > span, 
 .about-greeting h1 > span {
     white-space: nowrap;
     display: inline-block; 
 }
-.about-content p span span, 
-.about-greeting h1 span span {
+.greeting-content p span span, 
+.greeting h1 span span {
     display: inline-block; 
     white-space: pre-wrap;
     animation: fall-down linear forwards;
@@ -121,10 +127,10 @@ section {
     animation-range: 10vh 70vh; 
 }
 
-.about-greeting span:nth-child(2n) { 
+.greeting span:nth-child(2n) { 
     animation-range: exit 10% exit 60%; 
 }
-.about-greeting span:nth-child(3n) { 
+.greeting span:nth-child(3n) { 
     animation-range: exit 10% exit 80%;
 
 }
@@ -132,7 +138,7 @@ section {
     0% { transform: translateY(0); opacity: 1; }
     100% { 
 
-        transform: translateY(calc(30vh * var(--speed))) rotate(calc(45deg * var(--speed))); 
+        transform: translateY(calc(30vh * var(--speed))) rotate(calc(45deg * var(--speed) * var(--direction))); 
         opacity: 0; 
     }
 }
@@ -140,14 +146,23 @@ section {
 .projects{
      border: none;
      outline:none;
-     background: linear-gradient(to bottom, #3A506B, #6FFFE9, #3A506B);
+     position: relative;
      margin-bottom: -1px;
      display: flex;
      flex-direction: column;
      width: 100%;
-     height: 100vh;
+     height: 120vh;
      justify-content:center;
-
+ }
+ .p-bg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120vh;
+  background: linear-gradient(to bottom, #3A506B, #6FFFE9, #3A506B);
+  clip-path: ellipse(100% 100% at 50% 0%);
+  z-index: -1;
  }
 
 h1, h2, h3, p, div {
@@ -157,17 +172,20 @@ h1, h2, h3, p, div {
 }
 .flickity-viewport {
   background: transparent !important;
+  z-index:10;
 }
 .gallery {
   background: transparent !important;
   overflow: hidden;
 }
-.title {
+.title-proj {
   text-align: center;
-  font-size: 40px;
+  font-size: 8em;
   color: #0B132B;
-  padding: 20px;
+  padding: 0;
   margin: 0;
+  text-shadow: #3A506B 0px 5px 4px, #6FFFE9 0px 10px 8px;
+  z-index: 7;
 }
 .gallery-cell {
   width: 70%;
@@ -197,7 +215,8 @@ h1, h2, h3, p, div {
     opacity: 0.7;
     transition: all 0.6s ease;
     filter: blur(5px);
-    transform: scale(0.85);
+    transform: rotateY(180deg) scale(0.85);
+    z-index:10;
    
 }
 .gallery-cell.is-selected .image-container:hover  {
@@ -207,15 +226,25 @@ h1, h2, h3, p, div {
     opacity: 1;
     z-index: 10;
     transition: z-index 0.6s;
+    animation: rotate-box 1s linear forwards;
     filter: blur(0);
     transform: scale(1);
+}
+
+@keyframes rotate-box {
+  from{
+    transform: rotateY(180deg);
+  }
+  to{
+    transform: rotateY(360deg);
+  }
 }
 .image-container img {
     display: block;
     border-radius: 25px;
     max-height: 70vh; 
     width: auto;
-    object-fit: contain; 
+    object-fit: fill; 
 }
 .gallery-cell.is-selected .image-container {
   opacity: 1;

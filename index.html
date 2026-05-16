@@ -5,16 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link href='https://fonts.googleapis.com/css?family=Indie Flower' rel='stylesheet'>
-
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link href='styles.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 
 </head>
 <body>
-    <script src="scripting.js" defer></script>
-        <div class="pointer" id="pointer">
-            <img src="./assets/pointer.png">
-        </div>
+    <script type="module" src="src/scripting.js" defer></script>
+    
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <!-- nav bar -->
     <nav class="navbar">
@@ -23,19 +21,23 @@
             <ul class="nav-links">
                 <li><a href="#page1">Home</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#About">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
+    <div class="pointer" id="pointer">
+        <img src="./assets/pointer.png">
+    </div>
     <!-- About Section -->
     <section class="page1" id="page1">
             
-            <div class="about-greeting">
+            <div class="greeting">
                 <h1>Hey, Emilee here.</h1>
             </div>
-            <div class="about-content">
+            <div class="greeting-content">
                 <p>A <span style="color: #6bf1eb; font-size: 26px;">software developer</span>, with a love of game development and art. 
-<br> Outside the IDE, I love gaming, reading, and cats.<wbr> Currently a student pursuing a 
+<br> Outside the IDE, I love gaming, making games, reading, and cats. <br> Currently a student pursuing a 
 <span style="color: #6bf1eb; font-size: 26px;">Bachelors of Computer Science</span> at the University of Ottawa. </p>
             </div>
             <div class="socials">
@@ -45,53 +47,62 @@
             </div>
     </section>
     <!-- Projects Section -->
-    <section class="projects" id="projects">
-        <h1 class="title"> Projects </h1>
-        <div class="gallery js-flickity">
-            <div class="gallery-cell" data-url="https://github.com/Moonshine6475/Cradle">
-                <div class="image-container">
-                <img src="./assets/cradle-pic.png" alt="Project 1">
-                    <div class="case-study-overlay">
-                        <div class="case-study-text">Cradle: Game in Progress</div>
+    <section class="projects" id="projects">   
+        <div class="p-bg"></div>     
+            <h1 class="title-proj"> Projects </h1>
+            <div class="gallery js-flickity">
+                <div class="gallery-cell" data-url="https://github.com/Moonshine6475/Cradle">
+                    <div class="image-container" style="scale:1.3">
+                    <img src="./assets/cradle-pic.png" alt="Project 1">
+                        <div class="case-study-overlay">
+                            <div class="case-study-text">Cradle: Game in Progress</div>
+                        </div>
+                    </div>
+                    </div>
+                <div class="gallery-cell">
+                    <div class="image-container">
+                    <img src="./assets/general-img-square.png" alt="Project 2">
+                        <div class="case-study-overlay">
+                            <div class="case-study-text">Coming Soon</div>
+                        </div>
                     </div>
                 </div>
+                <div class="gallery-cell">
+                    <div class="image-container">
+                    <img src="assets/general-img-square.png" alt="Project 3">
+                        <div class="case-study-overlay">
+                            <div class="case-study-text">Coming Soon</div>
+                        </div>
+                        </div>
                 </div>
-            <div class="gallery-cell">
-                <div class="image-container">
-                <img src="./assets/general-img-square.png" alt="Project 2">
-                    <div class="case-study-overlay">
-                        <div class="case-study-text">Coming Soon</div>
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-cell">
-                <div class="image-container">
-                <img src="assets/general-img-square.png" alt="Project 3">
-                    <div class="case-study-overlay">
-                        <div class="case-study-text">Coming Soon</div>
-                    </div>
-                    </div>
-            </div>
-            <div class="gallery-cell">
-                <div class="image-container">
-                <img src="assets/general-img-square.png" alt="Project 4">
-                    <div class="case-study-overlay">
-                        <div class="case-study-text">Coming Soon</div>
+                <div class="gallery-cell">
+                    <div class="image-container">
+                    <img src="assets/general-img-square.png" alt="Project 4">
+                        <div class="case-study-overlay">
+                            <div class="case-study-text">Coming Soon</div>
+                        </div>
                     </div>
                 </div>
+                <div class="gallery-cell">
+                    <div class="image-container">
+                    <img src="assets/general-img-square.png" alt="Project 5">
+                        <div class="case-study-overlay">
+                            <div class="case-study-text">Coming Soon</div>
+                        </div>
+                        </div>
+                </div>
             </div>
-            <div class="gallery-cell">
-                <div class="image-container">
-                <img src="assets/general-img-square.png" alt="Project 5">
-                    <div class="case-study-overlay">
-                        <div class="case-study-text">Coming Soon</div>
-                    </div>
-                    </div>
-            </div>
+    </section>
+
+    <section class="about" id="About">
+        <h1 class="title"> About Me </h1>
+        <div class="about-content">
+            <p>I'm a software developer who loves game development and art. <br> 
+Inspiration can come at any time, and merging those ideas into fun experiences is what drives me. 
+Currently, I'm learning the specifics of UI design elements, focusing on iterative development and user experience.</p>
         </div>
     </section>
-    <script>
-        
+        <script>
 var flkty = new Flickity('.gallery');
 
 flkty.on('staticClick', function(event, pointer, cellElement, cellIndex) {
