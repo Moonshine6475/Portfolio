@@ -71,7 +71,7 @@ section {
      position:relative;
      overflow: hidden;
      margin-bottom: -1px;
-     background: linear-gradient(to bottom, #0B132B, #0B132B, #3A506B);
+     background: linear-gradient(to bottom, #0B132B, #0B132B, #3A506B) url(/assets/stars.png) repeat top left;
      display: flex;
      flex-direction: column;
      width: 100%;
