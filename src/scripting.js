@@ -1,4 +1,6 @@
  
+//pointer
+
 document.addEventListener('DOMContentLoaded', () => {
 const follower = document.querySelector('#pointer');
 
@@ -9,6 +11,8 @@ const follower = document.querySelector('#pointer');
   });
     });
 });
+
+//word wrapping
     document.addEventListener("DOMContentLoaded", () => {
     const wrapElement = (el) => {
     const content = el.innerHTML;

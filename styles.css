@@ -97,7 +97,7 @@ section {
   height:auto;
   transform:translate(-50%, -50%);
   pointer-events: none !important;
-  z-index: 1;
+  z-index: 2;
  }
  .greeting {
     font-size: 36px;
@@ -108,7 +108,7 @@ section {
     border:none;
     box-shadow: none;
     outline: none;
-    text-decoration: none;
+    text-shadow: #141730 0px 5px 4px, #81e9e9 0px 10px 8px;
     z-index: 7;
 }
 .greeting-content {
@@ -153,6 +153,7 @@ section {
     }
 }
 
+/* projects section */
 .projects{
      border: none;
      outline:none;
@@ -162,6 +163,7 @@ section {
      flex-direction: column;
      width: 100%;
      height: 120vh;
+     background-color: #be8938;
      justify-content:center;
  }
  .p-bg{
@@ -169,11 +171,22 @@ section {
   top: 0;
   left: 0;
   width: 100%;
-  height: 120vh;
+  height: 115vh;
   background: linear-gradient(to bottom, #3A506B, #6FFFE9, #3A506B);
-  clip-path: ellipse(100% 100% at 50% 0%);
-  z-index: -1;
+  animation: scroll linear both;
+  animation-timeline: scroll(root);
+  animation-range: 60vh 140vh;
+  z-index: 1;
  }
+
+ @keyframes scroll {
+  from {
+    clip-path: ellipse(100% 30% at 50% 0%);
+  }
+  to {
+    clip-path: ellipse(100% 80% at 50% 60%);
+  }
+}
 
 h1, h2, h3, p, div {
   margin: 0;
@@ -225,7 +238,7 @@ h1, h2, h3, p, div {
     opacity: 0.7;
     transition: all 0.6s ease;
     filter: blur(5px);
-    transform: rotateY(180deg) scale(0.85);
+    transform: rotateY(180deg) scale(0.8);
     z-index:10;
    
 }
@@ -276,4 +289,28 @@ h1, h2, h3, p, div {
     pointer-events: none; /* Allows clicks to pass through to the slider */
 }
 
+/* about section */
+.about{
+    border: none;
+     outline:none;
+     position: relative;
+     margin-bottom: -1px;
+     display: flex;
+     flex-direction: column;
+     width: 100%;
+     height: 80vh;
+     align-items: center;
+     background: linear-gradient(to bottom, #be8938, #d3b259, #cabc7b);
+     z-index: -2;
+
+}
+.ab-title{
+  text-align: center;
+  font-size: 8em;
+  color: #0B132B;
+  padding: 0;
+  margin: 0;
+  text-shadow: #6b543a 0px 5px 4px, #fcf9cf 0px 10px 8px;
+  z-index: 7;
+}
 /* cell number */
