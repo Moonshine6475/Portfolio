@@ -1,7 +1,28 @@
  
-//pointer
+//pointer and flickity and some visibilty stuff
 
 document.addEventListener('DOMContentLoaded', () => {
+
+
+    var flickity = new Flickity('.gallery', {
+        selectedAttraction: 0.2,
+        friction: 0.8,
+        adaptiveHeight: true,
+        pageDots: false,
+        prevNextButtons: false,
+        draggable: true,
+    });
+
+    const navbar = document.querySelector('.navbar');
+    const updateNavbarPointerEvents = () => {
+        const opacity = parseFloat(getComputedStyle(navbar).opacity);
+        navbar.style.pointerEvents = opacity > 0.5 ? 'auto' : 'none';
+    };
+    
+    // Check initially and listen for scroll changes
+    updateNavbarPointerEvents();
+    window.addEventListener('scroll', updateNavbarPointerEvents);
+
 const follower = document.querySelector('#pointer');
 
     window.addEventListener('mousemove', (e) => {

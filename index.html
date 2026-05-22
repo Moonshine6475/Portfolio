@@ -17,7 +17,9 @@
     <!-- nav bar -->
     <nav class="navbar">
         <div class="container">
-            <a href="#" class="logo">EWang</a>
+            <a href="#" class="logo">
+                <img src="./assets/logo.png" style="width: 60px; height: auto;" alt="Logo">
+            </a>
             <ul class="nav-links">
                 <li><a href="#page1">Home</a></li>
                 <li><a href="#projects">Projects</a></li>
@@ -31,7 +33,13 @@
     </div>
     <!-- About Section -->
     <section class="page1" id="page1">
+            <a href="#" class="logo2">
+                <img src="./assets/logo.png" style="width: 150px; height: auto;" alt="Logo">
+            </a>
+        <!-- Background and Stars -->
+            <div class="p1-bg"></div> 
             <div class="stars"></div>
+        <!-- Greeting and Socials-->
             <div class="greeting">
                 <h1>Hey, Emilee here.</h1>
             </div>
@@ -42,8 +50,9 @@
             </div>
             <div class="socials">
                 <ul class ="social-links">
-                    <li><img src="" onclick="window.open('https://www.linkedin.com/in/emilee-wang-23ab56288/', '_blank')" alt="LinkedIn"></li>
-
+                    <li><img src="/assets/linkedin.png" onclick="window.open('https://www.linkedin.com/in/emilee-wang-23ab56288/', '_blank')" alt="LinkedIn"></li>
+                    <li><img src="/assets/github.png" style="border-radius:20%;" onclick="window.open('https://github.com/Moonshine6475', '_blank')" alt="GitHub"></li>
+                    <li><img src="/assets/instagram-circle.png" style="width: 60px; height: 60px; border-radius: 20%;" onclick="window.open('https://www.instagram.com/winter_moon_6475/', '_blank')" alt="Instagram"></li>
             </div>
     </section>
     <!-- Projects Section -->
@@ -52,7 +61,7 @@
             <h1 class="title-proj"> Projects </h1>
             <div class="gallery js-flickity">
                 <div class="gallery-cell" data-url="https://github.com/Moonshine6475/Cradle">
-                    <div class="image-container" style="scale:1.3">
+                    <div class="image-container">
                     <img src="./assets/cradle-pic.png" alt="Project 1">
                         <div class="case-study-overlay">
                             <div class="case-study-text">Cradle: Game in Progress</div>
@@ -95,13 +104,35 @@
             <div class="shoreline"></div>
     </section>
 
+    <!-- About Section -->
     <section class="about" id="About">
         <h1 class="ab-title"> About Me </h1>
+        
         <div class="about-content">
-            <p>I'm a software developer who loves game development and art. <br> 
-Inspiration can come at any time, and merging those ideas into fun experiences is what drives me. 
-Currently, I'm learning the specifics of UI design elements, focusing on iterative development and user experience.</p>
+            <div class="ab-selfie">
+                <img src="./assets/selfie.png" alt="Selfie">
+            </div>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;I'm Emilee, Canadian-born Chinese based out of Ottawa, Canada. I'm studying towards a Bachelors of Computer Science at the University of Ottawa, on track to graduate in Summer of 2027.<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;Inspiration can come at any time, and merging those ideas into fun experiences is what drives me. I love the process of creating and making systems, with years of background in art. 
+<br><br>&nbsp;&nbsp;&nbsp;&nbsp;As a developer, my design process is heavily influenced by my artistic background, 
+creating generalized frameworks before adding the details afterwards. Sometimes, this means adding on new features in future iterations after working on another section of the project. My favorite themes and genres are fantasy, sci-fi, and nature, which are often reflected in my work.
+<br><br> &nbsp;&nbsp;&nbsp;&nbsp; Currently, I'm learning the specifics of UI design elements, focusing on iterative development and user experience.
+I tend to jump from hobby to hobby, gaining a myriad of skills such as origami, piano, ballet, and much more. Currently, I'm teaching myself auto mechanics.
+</p>
         </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h1 class="contact-title"> Contact Me </h1>
+        <div class="contact-info">
+            <img src="./assets/cup.png" style="width:60px;" class="contact-cup">
+            Always open to a chat!<br>
+            Email: <a href="mailto:emwang072@uottawa.ca">emwang072@uottawa.ca</a>
+            <br>Phone: <a href="tel:+16475643755">+1 (647) 564-3755</a>
+        </div>
+        
+        <p class="year">© 2026 Emilee Wang</p>
+            
     </section>
         <script>
 var flkty = new Flickity('.gallery');
