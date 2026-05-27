@@ -407,11 +407,7 @@ h1, h2, h3, p, div {
 .ab-selfie{
   width: 100%;  
   height: auto;     
-  max-width: 500px;  
-  min-width: 300px;
   aspect-ratio: 1 / 1;
-  max-height: 500px;
-  min-height: 300px;
   margin-right: 60px;
   justify-content: center;
   align-items: center;
