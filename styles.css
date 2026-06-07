@@ -354,6 +354,10 @@ h1, h2, h3, p, div {
 }
 .case-study-overlay {
     position: absolute;
+    font-size: 24px;
+     text-align: center;
+     text-shadow: #0B132B 0px 2px 2px, #6FFFE9 0px 4px 4px;
+     z-index: 10;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
     bottom: 0;
