@@ -4,6 +4,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+
+html { scroll-behavior: smooth; }
+
 body {
     font-family: "Indie Flower", cursive;
     line-height: 1.6;
@@ -100,6 +104,7 @@ section {
   top: 20px;
   left: 20px;
   z-index: 7;
+  width: 100%;
  }
  .logo2 :hover{
   animation: spin 2s linear infinite;
@@ -119,7 +124,7 @@ section {
      position:absolute;
      overflow: hidden;
      margin-bottom: -1px;
-     background:  url(/assets/moon.png) no-repeat top right, url(/assets/horizon.png) repeat-x bottom left,linear-gradient(to bottom, #0B132B, #0B132B, transparent);
+     background: linear-gradient(to bottom, #0B132B, #0B132B, transparent);
      display: flex;
      flex-direction: column;
      width: 100%;
@@ -128,6 +133,9 @@ section {
      justify-content: center;
      z-index:1;
 
+ }
+ .p1-bg img{
+  width: 300px;
  }
 .stars{
   position: absolute;
@@ -204,6 +212,124 @@ section {
         opacity: 0; 
     }
 }
+
+.learnmore{
+  z-index: 7;
+  position:absolute;
+  bottom: 8rem;
+  display: flex;
+  width: 12rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: fade linear forwards;
+    animation-timeline: scroll(root);
+    animation-range: 10vh 70vh; 
+}
+
+.learnbtn{
+  width: 12rem;
+  height: 3rem;
+  background-color: #42b2b41a;
+  border-radius: 5px;
+  box-shadow: inset 0px 0px 8px rgb(92, 194, 183);
+  border: none;
+  width: 100%;
+}
+
+.learnbtn p{
+  font-family: 'indie flower', sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #6FFFE9;
+}
+
+.learnmore img{
+  width: 60px;
+  position:absolute;
+}
+
+#arrow1{
+  bottom: -30px;
+  animation: drop1 3s linear 1s infinite forwards ;
+}
+
+@keyframes drop1{
+  0%{
+  }
+  25%{
+    transform: translateY(0px);
+  }
+  35%{
+    transform: translateY(45px);
+    opacity: 1;
+  }
+  40%{
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  90%{
+    transform: translateY(-10px);
+    opacity:0;
+  }
+}
+
+#arrow2{
+  bottom: -45px;
+  animation: drop2 3s linear 1s infinite forwards;
+}
+
+@keyframes drop2{
+  0%{
+  }
+  20%{
+    transform: translateY(0px);
+  }
+  30%{
+    transform: translateY(35px);
+    opacity: 1;
+  }
+  35%{
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  80%{
+    transform: translateY(-15px);
+    opacity:0;
+  }
+}
+#arrow3{
+  bottom: -60px;
+  animation: drop3 3s linear 1s infinite forwards;
+}
+
+@keyframes drop3{
+  0%{
+  }
+  18%{
+    transform: translateY(0px);
+  }
+  26%{
+    transform: translateY(25px);
+    opacity: 1;
+  }
+  32%{
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  75%{
+    transform: translateY(-20px);
+    opacity:0;
+  }
+}
+
+
+
+@keyframes fade {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
 
 /*socials*/
 .socials {
@@ -288,7 +414,7 @@ h1, h2, h3, p, div {
 }
 .title-proj {
   text-align: center;
-  font-size: 8em;
+  font-size: 5em;
   color: #0B132B;
   padding: 0;
   margin: 0;
@@ -314,8 +440,8 @@ h1, h2, h3, p, div {
 .image-container {
     position: relative;
   border-radius: 25px;
-  outline: 2px solid transparent;
-  outline-offset: -2px;
+  outline: 4px solid transparent;
+  outline-offset: -4px;
   
   display: block;
   
@@ -329,7 +455,8 @@ h1, h2, h3, p, div {
    
 }
 .gallery-cell.is-selected .image-container:hover  {
-    outline: 2px solid aqua;
+    outline: 4px solid aqua;
+    cursor: pointer;
 }
 .gallery-cell.is-selected .image-container {
     opacity: 1;
@@ -382,6 +509,7 @@ h1, h2, h3, p, div {
      align-items: center;
      justify-content: center;
      background: linear-gradient(to bottom, #be8938, #d3b259, #cabc7b);
+     scroll-margin-top: 80px;
 
 }
 .ab-title{
@@ -393,9 +521,11 @@ h1, h2, h3, p, div {
   text-shadow: #6b543a 0px 5px 4px, #fcf9cf 0px 10px 8px;
   z-index: 7;
 }
+
+
 .about-content{
     font-size: 26px;
-    padding: 0px 80px 0px 40px;
+    padding: 0px 40px 0px 40px;
     color: #3b3327;
     text-align: left;
     display: flex;
@@ -486,4 +616,22 @@ aspect-ratio: 1 / 1;
     bottom:10px;
     right: 5px;
     z-index: 7;
+}
+
+
+@media only screen and (max-width: 1024px){
+  .p1-bg img{
+    width: 250px;
+  }
+
+  .about-content{
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .ab-selfie{
+    padding:0;
+    margin: 0;
+  }
 }

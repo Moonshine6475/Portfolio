@@ -25,12 +25,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const follower = document.querySelector('#pointer');
 
-    window.addEventListener('mousemove', (e) => {
-        window.requestAnimationFrame(() => {
-    pointer.style.left = e.clientX + 'px';
-    pointer.style.top = e.clientY + 'px';
-  });
-    });
+//     window.addEventListener('mousemove', (e) => {
+//         window.requestAnimationFrame(() => {
+//     pointer.style.left = e.clientX + 'px';
+//     pointer.style.top = e.clientY + 'px';
+//   });
+//     });
 });
 
 //word wrapping
